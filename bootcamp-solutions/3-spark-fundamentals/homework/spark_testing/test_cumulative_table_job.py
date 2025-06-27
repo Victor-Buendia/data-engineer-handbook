@@ -72,7 +72,7 @@ def test_do_cumulative_transformation(spark):
     expected_df = spark.createDataFrame(expected_data)
 
     # Run the function under test
-    result_df = do_cumulative_transformation(spark, (actors_df, actor_films_df), 2022)
+    result_df = do_cumulative_transformation((actors_df, actor_films_df), 2022)
 
     # Assert the result
     assert_df_equality(result_df, expected_df, ignore_nullable=True)

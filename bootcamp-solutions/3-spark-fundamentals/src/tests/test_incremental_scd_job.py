@@ -35,7 +35,7 @@ def test_incremental_scd_job(spark):
         ]
     )
     actual_df = do_incremental_scd_transformation(
-        spark, (actors_df, actors_history_scd_df), 2023
+        (actors_df, actors_history_scd_df), 2023
     )
     expected_df = spark.createDataFrame(
         [
